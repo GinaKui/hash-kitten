@@ -33,9 +33,10 @@ class App extends Component {
     return !robots.length ?
       <Loading /> :
       (
-        <div className='tc'>
-          <h1 className='f1'>Hash Kitten</h1>
+        <div className='App tc'>
+          <h1>Hash Kitten</h1>
           <SearchBox searchChange={this.handleSearchChange}/>
+          <hr />
           <div style={{ overflow: 'scroll'}}>
             <CardList robots={filteredRobots} />
           </div>    
