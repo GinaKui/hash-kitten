@@ -9,15 +9,16 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      robots: [],
+      entityArray: [],
       searchfield: ''
     };
   }
 
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response=> response.json())
-      .then(users => {this.setState({ robots: users})});
+      .then(response => response.json())
+      .then(data => {this.setState({ entityArray: data })})
+      .catch(err => console.log(err));
   }
 
   handleSearchChange = e => {
@@ -25,21 +26,19 @@ class App extends Component {
   }
 
   render() {
-    const { robots, searchfield } = this.state;
-    const filteredRobots = robots.filter( robot => {
-      return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+    const { entityArray, searchfield } = this.state;
+    const filteredResults = entityArray.filter( entity => {
+      return entity.name.toLowerCase().includes(searchfield.toLowerCase());
     });
 
-    return !robots.length ?
+    return !entityArray.length ?
       <Loading /> :
       (
         <div className='App tc'>
           <h1>Hash Kitten</h1>
           <SearchBox searchChange={this.handleSearchChange}/>
           <hr />
-          <div style={{ overflow: 'scroll'}}>
-            <CardList robots={filteredRobots} />
-          </div>    
+          <CardList entityArray={filteredResults} />     
         </div>
       );
   }

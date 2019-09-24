@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Card from './Card';
 
-const CardList = ({ robots }) => {
+const CardList = ({ entityArray }) => {
   return (
-    <div>
+    <div style={{ overflow: 'scroll'}}>
       {
-        robots.map((robot, i) => {
+        entityArray.map((robot, i) => {
           return (
             <Card
               key={i}
@@ -18,6 +20,10 @@ const CardList = ({ robots }) => {
       }
     </div>
   );
-}
+};
+
+CardList.propTypes = {
+  entityArray: PropTypes.array.isRequired
+};
 
 export default CardList;
