@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
+import Loading from '../components/Loading';
 
 import './App.css';
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       robots: [],
       searchfield: ''
-    }
+    };
   }
 
   componentDidMount() {
@@ -20,7 +21,7 @@ class App extends Component {
   }
 
   handleSearchChange = e => {
-    this.setState({ searchfield: e.target.value })
+    this.setState({ searchfield: e.target.value });
   }
 
   render() {
@@ -30,12 +31,12 @@ class App extends Component {
     });
 
     return !robots.length ?
-      <h1>Loading</h1> :
+      <Loading /> :
       (
         <div className='tc'>
           <h1 className='f1'>Hash Kitten</h1>
           <SearchBox searchChange={this.handleSearchChange}/>
-          <div style={{ overflow: 'scroll', border: '5px solid black', height: '800px'}}>
+          <div style={{ overflow: 'scroll'}}>
             <CardList robots={filteredRobots} />
           </div>    
         </div>
