@@ -31,7 +31,7 @@ class App extends Component {
       return entity.name.toLowerCase().includes(searchfield.toLowerCase());
     });
 
-    return !entityArray.length ?
+    return !!entityArray.length ?
       <Loading /> :
       (
         <div className='App tc'>
