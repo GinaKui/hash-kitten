@@ -12,5 +12,5 @@
 body {
   font-family: Consolas, monaco, monospace;
   font-size: 1.6rem;
-  background: linear-gradient(to bottom, var(--primary-color) 0%, var(--secondary-color) 100%); 
+  background: no-repeat linear-gradient(to bottom, var(--primary-color) 0%, var(--secondary-color) 100%); 
 }
