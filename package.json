@@ -9,9 +9,9 @@
   "homepage": "https://hashkitten19.netlify.com/",
   "dependencies": {
     "node-sass": "^4.12.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "^3.1.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "^3.2.0",
     "tachyons": "^4.11.1"
   },
   "scripts": {
