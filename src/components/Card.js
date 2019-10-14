@@ -11,9 +11,14 @@ const Card = ({ name, website, id }) => (
   </div>
 );
 
+Card.defaultProps = {
+  name: 'Anonymous'
+};
+
 Card.propTypes = {
   name: PropTypes.string,
   website: PropTypes.string,
-}
+  id: PropTypes.string.isRequired,
+};
 
 export default Card;
