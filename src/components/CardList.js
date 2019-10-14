@@ -6,9 +6,9 @@ import Card from './Card';
 const CardList = ({ entityArray }) => (
   <div style={{ overflow: 'scroll'}}>
   {
-    entityArray.map((entity, i) => (
+    entityArray.map( entity => (
       <Card
-        key={i}
+        key={entity.id}
         id={entity.id}
         name={entity.username}
         website={entity.website}

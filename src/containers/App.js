@@ -12,16 +12,17 @@ class App extends Component {
       entityArray: [],
       searchfield: ''
     };
+    this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
-      .then(data => {this.setState({ entityArray: data })})
+      .then(data => this.setState({ entityArray: data }))
       .catch(err => console.log(err));
   }
 
-  handleSearchChange = e => {
+  handleSearchChange(e) {
     this.setState({ searchfield: e.target.value });
   }
 
