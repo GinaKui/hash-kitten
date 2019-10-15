@@ -1,6 +1,6 @@
-# ekitten app
+# ekitten
 
-Front-end UI to display cute kitten responsibly. 
+Responsive front-end app to display cute kittens. 
 
 Deployed at https://hashkitten19.netlify.com
 
