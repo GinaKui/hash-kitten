@@ -3,12 +3,12 @@ import React from 'react';
 import './Loading.scss';
 
 const Loading = () => (
-  <div class="Loading tc">
-    <div class="load">
+  <div className="Loading tc">
+    <div className="load">
       Loading
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+      <div className="line"></div>
+      <div className="line"></div>
+      <div className="line"></div>
     </div>
   </div>
 );

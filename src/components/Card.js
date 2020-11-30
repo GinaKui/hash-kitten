@@ -18,7 +18,7 @@ Card.defaultProps = {
 Card.propTypes = {
   name: PropTypes.string,
   website: PropTypes.string,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default Card;
