@@ -3,20 +3,23 @@ import PropTypes from 'prop-types';
 
 import Card from './Card';
 
-const CardList = ({ entityArray }) => (
-  <div style={{ overflow: 'scroll'}}>
-  {
-    entityArray.map( entity => (
-      <Card
-        key={entity.id}
-        id={entity.id}
-        name={entity.username}
-        website={entity.website}
-      />)
-    )
+const CardList = ({ entityArray }) => {
+  if(entityArray.length === 0) {
+    return <div>No Matching Kitten</div>;
   }
-  </div>
-);
+  return (
+    <div style={{ overflow: 'scroll'}}>
+      {entityArray.map(entity => (
+        <Card
+          key={entity.id}
+          id={entity.id}
+          name={entity.username}
+          website={entity.website}
+        />)
+      )}
+    </div>
+  );
+};
 
 
 CardList.propTypes = {
