@@ -15,11 +15,19 @@ class App extends Component {
     this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
-  componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(data => this.setState({ entityArray: data }))
-      .catch(err => console.log(err));
+  async componentDidMount() {
+  //  fetch('https://jsonplaceholder.typicode.com/users')
+  //  .then(response => response.json())
+  //    .then(data => this.setState({ entityArray: data }))
+  //    .catch(err => console.log(err));
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/users');
+      const json = await response.json();
+      this.setState({ entityArray: json });
+    } catch (err) {
+      console.log(err);
+    }
+
   }
 
   handleSearchChange(e) {
