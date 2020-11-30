@@ -24,6 +24,7 @@ class App extends Component {
       const response = await fetch('https://jsonplaceholder.typicode.com/users');
       const json = await response.json();
       this.setState({ entityArray: json });
+
     } catch (err) {
       console.log(err);
     }
@@ -37,7 +38,7 @@ class App extends Component {
   render() {
     const { entityArray, searchfield } = this.state;
     const filteredResults = entityArray.filter( entity => {
-      return entity.name.toLowerCase().includes(searchfield.toLowerCase());
+      return entity.username.toLowerCase().includes(searchfield.toLowerCase());
     });
 
     return (
