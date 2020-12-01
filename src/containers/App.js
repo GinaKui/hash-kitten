@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import CardList from '../components/CardList';
+import KittenList from '../components/KittenList';
 import SearchBox from '../components/SearchBox';
 import Loading from '../components/Loading';
+import Footer from '../components/Footer';
 
 import './App.css';
 
@@ -16,19 +17,13 @@ class App extends Component {
   }
 
   async componentDidMount() {
-  //  fetch('https://jsonplaceholder.typicode.com/users')
-  //  .then(response => response.json())
-  //    .then(data => this.setState({ entityArray: data }))
-  //    .catch(err => console.log(err));
     try {
       const response = await fetch('https://jsonplaceholder.typicode.com/users');
       const json = await response.json();
       this.setState({ entityArray: json });
-
     } catch (err) {
       console.log(err);
     }
-
   }
 
   handleSearchChange(e) {
@@ -42,14 +37,14 @@ class App extends Component {
     });
 
     return (
-      <div className='App tc'>
+      <div className='App tc flex flex-column justify-between'>
         <h1>Hash Kitten</h1>
         <SearchBox searchChange={this.handleSearchChange}/>
-        <hr />
         {
           !entityArray.length ? <Loading /> : 
-          <CardList entityArray={filteredResults} />    
-        } 
+          <KittenList entityArray={filteredResults} />    
+        }
+        <Footer />
       </div>
     );
   }
