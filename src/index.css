@@ -1,6 +1,6 @@
 :root {
-  --primary-color: rgba(7,27,82,1);
-  --secondary-color: rgba(0,128,128,1);
+  --primary-color: rgba(94,77,6);
+  --secondary-color: rgb(232,230,123);
   font-size: 10px;
 }
 
@@ -14,3 +14,9 @@ body {
   font-size: 1.6rem;
   background: no-repeat linear-gradient(to bottom, var(--primary-color) 0%, var(--secondary-color) 100%); 
 }
+
+ a:active,
+ a:visited,
+ a:hover {
+  color: inherit;
+ }
